@@ -1,5 +1,12 @@
 [
     {
+        "id": "EAVESDROPPER",
+        "title": "Eavesdropper",
+        "subtitle": "Message Logger",
+        "description": "A microservice built to log incoming messages to outgoing systems that can be easily integrated with existing spring boot systems. This way, ",
+        "skills": ["JAVA", "SPRING", "DOCKER", "REACT-JS"]
+    },
+    {
         "id": "OYNA",
         "title": "Oyna",
         "subtitle": "Task Management App",

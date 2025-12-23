@@ -4,7 +4,7 @@ import { Divider, Grid, Stack } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import NavButton from "./components/button/navbutton/NavButton";
-import { GitHub, LinkedIn, Email, BorderRight } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 import IconButton from "./components/button/iconbutton/IconButton";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProjectCard from "./components/display/projectcard/ProjectCard";
@@ -12,7 +12,7 @@ import Project from "./types/project";
 import Tech from "./types/tech";
 import TechCard from "./components/display/techcard/TechCard";
 
-const tabs = { ABOUT: "ABOUT", PROJECTS: "PROJECTS", TECHNOLOGIES: "TECHNOLOGIES" } as const;
+const tabs = { ABOUT: "ABOUT", PROJECTS: "PROJECTS", TECHNOLOGIES: "TECHNOLOGIES", EXPERIENCE: "EXPERIENCE" } as const;
 
 type Tab = keyof typeof tabs;
 
@@ -66,25 +66,23 @@ export default function Home() {
             selected={selectedTab === tabs.TECHNOLOGIES}>
             Tech
           </NavButton>
+          <NavButton
+            onClick={() => setSelectedTab(tabs.EXPERIENCE)}
+            selected={selectedTab === tabs.EXPERIENCE}>
+            Experience
+          </NavButton>
         </div>
-        <div
-          className="header-card"
-          style={{
-            display: "flex",
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            margin: "10px"
-          }}>
+        <div className="header-card">
           <h1>Jonas de Boer</h1>
           <div className="header-card-profile-image">
-            <Image width='200' height="200" alt="profile" src="/static/images/profile.jpg" />
+            <Image height={1000} width={1000} style={{ width: 'auto', height: '100%' }} alt="profile" src="/static/images/profile.jpg" />
           </div>
         </div>
       </div>
 
 
-      <Divider />
-      <div className="content">
+      <div className="content-outer">
+        <div className="content-inner">
         {selectedTab === tabs.ABOUT && (<div>
           <h2>About</h2>
           <p id="about">
@@ -113,6 +111,12 @@ export default function Home() {
             ))}
           </Grid>
         </div>)}
+
+        {selectedTab === tabs.EXPERIENCE && (<div>
+          <h2>Experience</h2>
+          <h1>WIP</h1>
+        </div>)}
+        </div>
       </div>
 
       <div className="link-footer">
