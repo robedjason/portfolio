@@ -1,0 +1,62 @@
+[
+    {
+        "key": "JAVA",
+        "title": "Java",
+        "iconName": "java.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "KOTLIN",
+        "title": "Kotlin",
+        "iconName": "kotlin.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "REACT-JS",
+        "title": "ReactJS",
+        "iconName": "react.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "DOCKER",
+        "title": "Docker",
+        "iconName": "docker.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "JAVASCRIPT",
+        "title": "JavaScript",
+        "iconName": "javascript.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "TYPESCRIPT",
+        "title": "TypeScript",
+        "iconName": "typescript.svg",
+        "yearsExperience": 3
+    },
+    {
+        "key": "PYTHON",
+        "title": "Python",
+        "iconName": "python.svg",
+        "yearsExperience": 4
+    },
+    {
+        "key": "SPRING",
+        "title": "Spring",
+        "iconName": "springboot.svg",
+        "yearsExperience": 5
+    },
+    {
+        "key": "DJANGO",
+        "title": "Django",
+        "iconName": "django.svg",
+        "yearsExperience": 1
+    },
+    {
+        "key": "REACT-NATIVE",
+        "title": "React Native",
+        "iconName": "react.svg",
+        "yearsExperience": 1
+    }
+]

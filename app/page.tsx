@@ -1,65 +1,125 @@
+'use client'
+
+import { Divider, Grid, Stack } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import NavButton from "./components/button/navbutton/NavButton";
+import { GitHub, LinkedIn, Email, BorderRight } from '@mui/icons-material';
+import IconButton from "./components/button/iconbutton/IconButton";
+import { useRouter, useSearchParams } from "next/navigation";
+import ProjectCard from "./components/display/projectcard/ProjectCard";
+import Project from "./types/project";
+import Tech from "./types/tech";
+import TechCard from "./components/display/techcard/TechCard";
+
+const tabs = { ABOUT: "ABOUT", PROJECTS: "PROJECTS", TECHNOLOGIES: "TECHNOLOGIES" } as const;
+
+type Tab = keyof typeof tabs;
 
 export default function Home() {
+
+  const [data, setData] = useState<{
+    techs: Tech[],
+    projects: Project[]
+  }>({
+    techs: [],
+    projects: [],
+  })
+
+  const searchParams = useSearchParams()
+  const spTab = searchParams.get('t');
+
+  const [selectedTab, setSelectedTab] = useState<Tab>(spTab && Object.keys(tabs).includes(spTab) ? (spTab as Tab) || null : tabs.ABOUT)
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(`?t=${selectedTab}`)
+  }, [selectedTab])
+
+  useEffect(() => {
+    Promise.all([
+      fetch("/static/data/techs.json").then(res => res.json()),
+      fetch("/static/data/projects.json").then(res => res.json())
+    ]).then(([techs, projects]) => {
+      setData({
+        techs, projects
+      })
+    })
+  }, [])
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="page">
+      <div className="header">
+        <div className="nav-header">
+          <NavButton
+            onClick={() => setSelectedTab(tabs.ABOUT)}
+            selected={selectedTab === tabs.ABOUT}>
+            About
+          </NavButton>
+          <NavButton
+            onClick={() => setSelectedTab(tabs.PROJECTS)}
+            selected={selectedTab === tabs.PROJECTS}>
+            Projects
+          </NavButton>
+          <NavButton
+            onClick={() => setSelectedTab(tabs.TECHNOLOGIES)}
+            selected={selectedTab === tabs.TECHNOLOGIES}>
+            Tech
+          </NavButton>
+        </div>
+        <div
+          className="header-card"
+          style={{
+            display: "flex",
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            margin: "10px"
+          }}>
+          <h1>Jonas de Boer</h1>
+          <div className="header-card-profile-image">
+            <Image width='200' height="200" alt="profile" src="/static/images/profile.jpg" />
+          </div>
+        </div>
+      </div>
+
+
+      <Divider />
+      <div className="content">
+        {selectedTab === tabs.ABOUT && (<div>
+          <h2>About</h2>
+          <p id="about">
+            Full‐stack engineer leading projects end‐to‐end across Kotlin/Spring backends and React frontends. Comfortable
+            owning technical direction, collaborating with customers, and translating business needs into reliable, maintainable
+            software. Experienced with microservices, REST APIs, relational databases, and modern DevOps practices. Looking to
+            build scalable products.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        </div>)}
+        {selectedTab === tabs.PROJECTS && (<div>
+          <h2>Projects</h2>
+          <Stack gap={4}>
+            {data.projects.map(it => (
+              <ProjectCard key={it.id} project={it} techs={data.techs} />
+            ))}
+          </Stack>
+        </div>)}
+
+        {selectedTab === tabs.TECHNOLOGIES && (<div>
+          <h2>Technologies</h2>
+          <Grid container spacing={2}>
+            {data.techs.map(it => (
+              <Grid size={{ xs: 12, sm: 6 }} key={it.key}>
+                <TechCard key={it.key} tech={it} />
+              </Grid>
+            ))}
+          </Grid>
+        </div>)}
+      </div>
+
+      <div className="link-footer">
+        <IconButton href="https://github.com/robedjason" icon={<GitHub fontSize="large" />} />
+        <IconButton href="https://www.linkedin.com/in/jonas-de-boer-29a290166/" icon={<LinkedIn fontSize="large" />} />
+        <IconButton href="mailto:jonasdeboer02@gmail.com" icon={<Email fontSize="large" />} />
+      </div>
     </div>
   );
 }
