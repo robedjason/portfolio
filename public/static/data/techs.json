@@ -3,60 +3,112 @@
         "key": "JAVA",
         "title": "Java",
         "iconName": "java.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "BE"
     },
     {
         "key": "KOTLIN",
         "title": "Kotlin",
         "iconName": "kotlin.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "BE"
+    },
+    {
+        "key": "POSTGRESQL",
+        "title": "PostgreSQL",
+        "iconName": "postgresql.svg",
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "DB"
     },
     {
         "key": "REACT-JS",
         "title": "ReactJS",
         "iconName": "react.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "FE"
     },
     {
         "key": "DOCKER",
         "title": "Docker",
         "iconName": "docker.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "INFRA"
     },
     {
         "key": "JAVASCRIPT",
         "title": "JavaScript",
         "iconName": "javascript.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "FE"
     },
     {
         "key": "TYPESCRIPT",
         "title": "TypeScript",
         "iconName": "typescript.svg",
-        "yearsExperience": 3
+        "yearsExperience": 3,
+        "experienceLevel": "MEDIUM",
+        "categoryKey": "FE"
     },
     {
         "key": "PYTHON",
         "title": "Python",
         "iconName": "python.svg",
-        "yearsExperience": 4
+        "yearsExperience": 4,
+        "experienceLevel": "MEDIUM",
+        "categoryKey": "BE"
     },
     {
         "key": "SPRING",
         "title": "Spring",
         "iconName": "springboot.svg",
-        "yearsExperience": 5
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "BE"
+    },
+    {
+        "key": "MYSQL",
+        "title": "MySQL",
+        "iconName": "mysql.svg",
+        "yearsExperience": 3,
+        "experienceLevel": "MEDIUM",
+        "categoryKey": "DB"
+    },
+    {
+        "key": "KUBERNETES",
+        "title": "Kubernetes",
+        "iconName": "kubernetes.svg",
+        "yearsExperience": 3,
+        "experienceLevel": "MEDIUM",
+        "categoryKey": "INFRA"
     },
     {
         "key": "DJANGO",
         "title": "Django",
         "iconName": "django.svg",
-        "yearsExperience": 1
+        "yearsExperience": 1,
+        "experienceLevel": "LOW",
+        "categoryKey": "BE"
     },
     {
         "key": "REACT-NATIVE",
         "title": "React Native",
         "iconName": "react.svg",
-        "yearsExperience": 1
+        "yearsExperience": 1,
+        "experienceLevel": "LOW",
+        "categoryKey": "FE"
+    },
+    {
+        "key": "SQLITE",
+        "title": "SQLite",
+        "iconName": "sqlite.svg",
+        "yearsExperience": 1,
+        "experienceLevel": "LOW",
+        "categoryKey": "DB"
     }
 ]

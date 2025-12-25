@@ -2,9 +2,9 @@ import { Grid, Stack } from "@mui/material"
 import "./projectcard.css"
 import Image from "next/image"
 import Project from "@/app/types/project"
-import Tech from "@/app/types/tech"
+import TechArray from "@/app/types/tech-array"
 
-export default function ProjectCard({ project, techs }: { project: Project, techs: Tech[] }) {
+export default function ProjectCard({ project, techs }: { project: Project, techs: TechArray }) {
   const relevantTechs = techs.filter(tech => project.skills.includes(tech.key))
 
   return (

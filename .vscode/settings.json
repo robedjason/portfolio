@@ -1,0 +1,22 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "public/static/data/projects.json"
+            ],
+            "url": "./public/static/data/schemas/project-array.schema.json"
+        },
+        {
+            "fileMatch": [
+                "public/static/data/techs.json"
+            ],
+            "url": "./public/static/data/schemas/tech-array.schema.json"
+        },
+        {
+            "fileMatch": [
+                "public/static/data/experiences.json"
+            ],
+            "url": "./public/static/data/schemas/experience-array.schema.json"
+        }
+    ]
+}

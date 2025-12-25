@@ -1,0 +1,49 @@
+{
+  "$ref": "#/definitions/Tech",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Tech": {
+      "additionalProperties": false,
+      "properties": {
+        "categoryKey": {
+          "enum": [
+            "BE",
+            "FE",
+            "DB",
+            "INFRA"
+          ],
+          "type": "string"
+        },
+        "experienceLevel": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "type": "string"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "yearsExperience": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "key",
+        "title",
+        "iconName",
+        "experienceLevel",
+        "yearsExperience",
+        "categoryKey"
+      ],
+      "type": "object"
+    }
+  }
+}

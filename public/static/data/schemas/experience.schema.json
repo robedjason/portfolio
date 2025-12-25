@@ -1,0 +1,73 @@
+{
+  "$ref": "#/definitions/Experience",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Experience": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "description": {
+          "$ref": "#/definitions/MultiLangString"
+        },
+        "endMonth": {
+          "type": "number"
+        },
+        "endYear": {
+          "type": "number"
+        },
+        "function": {
+          "$ref": "#/definitions/MultiLangString"
+        },
+        "id": {
+          "type": "number"
+        },
+        "location": {
+          "$ref": "#/definitions/MultiLangString"
+        },
+        "skillKeys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "startMonth": {
+          "type": "number"
+        },
+        "startYear": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "startMonth",
+        "startYear",
+        "function",
+        "company",
+        "location",
+        "description",
+        "skillKeys"
+      ],
+      "type": "object"
+    },
+    "MultiLangString": {
+      "additionalProperties": false,
+      "properties": {
+        "EN": {
+          "type": "string"
+        },
+        "NL": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key"
+      ],
+      "type": "object"
+    }
+  }
+}

@@ -4,20 +4,36 @@
         "title": "Eavesdropper",
         "subtitle": "Message Logger",
         "description": "A microservice built to log incoming messages to outgoing systems that can be easily integrated with existing spring boot systems. This way, ",
-        "skills": ["JAVA", "SPRING", "DOCKER", "REACT-JS"]
+        "skills": [
+            "JAVA",
+            "SPRING",
+            "DOCKER",
+            "REACT-JS",
+            "POSTGRESQL",
+            "MYSQL"
+        ]
     },
     {
         "id": "OYNA",
         "title": "Oyna",
         "subtitle": "Task Management App",
         "description": "A react native task manager app with task reminder notifications and date/time based task scheduling.",
-        "skills": ["REACT-NATIVE", "TYPESCRIPT"]
+        "skills": [
+            "REACT-NATIVE",
+            "TYPESCRIPT",
+            "SQLITE"
+        ]
     },
     {
         "id": "DELPHI",
         "title": "Delphi",
         "subtitle": "News Source Connector",
         "description": "A microservice built in python to analyze and connect messages from varying news sources, so reporters can easily find related sources to the topics they are working on.",
-        "skills": ["PYTHON", "DOCKER", "DJANGO"]
+        "skills": [
+            "PYTHON",
+            "DOCKER",
+            "DJANGO",
+            "POSTGRESQL"
+        ]
     }
 ]
