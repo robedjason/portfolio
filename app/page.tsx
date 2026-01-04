@@ -11,6 +11,7 @@ import Techs from "./components/sections/Techs";
 import Experiences from "./components/sections/Experiences";
 import Footer from "./components/sections/Footer";
 import ThemeToggle from "./components/ThemeToggle";
+import { prefix } from "./config/env";
 
 export default function Home() {
 
@@ -27,9 +28,9 @@ export default function Home() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/static/data/techs.json").then(res => res.json()),
-      fetch("/static/data/projects.json").then(res => res.json()),
-      fetch("/static/data/experiences.json").then(res => res.json())
+      fetch(`/${prefix}/static/data/techs.json`).then(res => res.json()),
+      fetch(`/${prefix}/static/data/projects.json`).then(res => res.json()),
+      fetch(`/${prefix}/static/data/experiences.json`).then(res => res.json())
     ]).then(([techs, projects, experiences]) => {
       setData({
         techs, projects, experiences

@@ -1,3 +1,4 @@
+import { prefix } from "@/app/config/env";
 import Tech, { ExperienceLevel, ExperienceLevelKey } from "@/app/types/tech";
 import Image from "next/image";
 
@@ -18,7 +19,7 @@ export default function TechCard({ tech }: { tech: Tech }) {
   return <div className="flex bg-background border rounded-xl p-4 items-center">
     <div className="flex flex-1 gap-2">
       <div className="dark:invert">
-        <Image alt={tech.key} src={`/static/icons/${tech.iconName}`} width={40} height={40} />
+        <Image alt={tech.key} src={`/${prefix}/static/icons/${tech.iconName}`} width={40} height={40} />
       </div>
       <div>
         <h3>{tech.title}</h3>
