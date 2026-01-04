@@ -28,9 +28,9 @@ export default function Home() {
 
   useEffect(() => {
     Promise.all([
-      fetch(`/${prefix}/static/data/techs.json`).then(res => res.json()),
-      fetch(`/${prefix}/static/data/projects.json`).then(res => res.json()),
-      fetch(`/${prefix}/static/data/experiences.json`).then(res => res.json())
+      fetch(`${prefix}/static/data/techs.json`).then(res => res.json()),
+      fetch(`${prefix}/static/data/projects.json`).then(res => res.json()),
+      fetch(`${prefix}/static/data/experiences.json`).then(res => res.json())
     ]).then(([techs, projects, experiences]) => {
       setData({
         techs, projects, experiences

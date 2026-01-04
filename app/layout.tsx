@@ -22,8 +22,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || ""; // "" locally, "/repo" on GH pages
+
   return (
-    <html lang="en">
+    <html lang="en"
+      style={{
+        ["--jbmono-woff2" as any]: `${base}/static/fonts/JetBrainsMono-Regular.woff2`,
+        ["--jbmono-ttf" as any]: `${base}/static/fonts/JetBrainsMono-Regular.ttf`,
+      }}
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
