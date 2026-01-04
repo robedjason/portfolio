@@ -16,9 +16,9 @@ export default function () {
                 <Image height={1000} width={1000} style={{ width: 'auto', height: '100%' }} alt="profile" src={`${prefix}/static/images/profile.jpg`} />
             </div>
             <div className="text-center">
-                <h1 className="animate-fade-in-up">Jonas de Boer</h1>
-                <h2 className="text-subtext animate-fade-in-up animation-delay-200">Senior Backend Engineer</h2>
-                <p className="text-subtext animate-fade-in-up animation-delay-200">Developing high-end scalable systems.</p>
+                <h1 className="animate-fade-in-up text-3xl font-bold py-2">Jonas de Boer</h1>
+                <h2 className="animate-fade-in-up animation-delay-200 text-xl pb-2">Senior Backend Engineer</h2>
+                <p className="text-subtext animate-fade-in-up animation-delay-200 pb-2">Developing high-end scalable systems.</p>
             </div>
             <div className="text-center animate-fade-in-up animation-delay-400">
                 <div className="flex justify-center">

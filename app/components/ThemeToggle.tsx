@@ -5,12 +5,12 @@ import * as React from "react";
 
 type Theme = "light" | "dark";
 
-function applyTheme(theme: Theme) {
+export function applyTheme(theme: Theme) {
   const root = document.documentElement; // <html>
   root.classList.toggle("dark", theme === "dark");
 }
 
-function getStoredTheme(): Theme | null {
+export function getStoredTheme(): Theme | null {
   const v = localStorage.getItem("theme");
   return v === "dark" || v === "light" ? v : null;
 }
