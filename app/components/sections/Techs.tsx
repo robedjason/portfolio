@@ -1,29 +1,32 @@
-import { Divider, Grid } from "@mui/material";
-import TechCard from "../display/techcard/TechCard";
+import TechCard from "../display/TechCard";
 import TechArray from "@/app/types/tech-array";
-import { Fragment } from "react/jsx-runtime";
 import { TechCategory } from "@/app/types/tech";
 
 
 export default function Techs({ techs }: { techs: TechArray }) {
-  return (<div>
-    <h2>Technologies</h2>
-    <p className="subtext">Technologies I've worked with.</p>
-    {Object.entries(Object.groupBy(techs, tech => tech.categoryKey)).map(([categoryKey, groupedTechs]) => {
-      if (!groupedTechs || groupedTechs.length == 0) return <Fragment />
-      const category = TechCategory.getByKey(categoryKey)
-      return (
-        <div className="techs-category">
-          <h3>{category.description}</h3>
-          <Grid container spacing={2}>
+
+  const techGroupings = Object.entries(Object.groupBy(techs, tech => tech.categoryKey)).map(([categoryKey, groupedTechs]) => ({
+    category: TechCategory.getByKey(categoryKey),
+    groupedTechs: groupedTechs || []
+  }))
+
+  return (<section className="py-8 px-4">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-center text-2xl font-bold">Technologies</h2>
+      <p className="text-center text-subtext mb-6">Technologies I've worked with.</p>
+      <div className="grid md:grid-cols-2 gap-8">
+        {techGroupings.map(({ category, groupedTechs }) => (
+          <div className="bg-altbackground rounded-3xl border p-6">
+            <h3 className="text-xl font-bold mb-4">{category.description}</h3>
             {groupedTechs.map(it => (
-              <Grid size={{ xs: 12, sm: 6 }} key={it.key}>
+              <div key={it.key} className="mb-3">
                 <TechCard key={it.key} tech={it} />
-              </Grid>
+              </div>
             ))}
-          </Grid>
-        </div>
-      )
-    })}
-  </div>)
+          </div>
+        )
+        )}
+      </div>
+    </div>
+  </section>)
 }

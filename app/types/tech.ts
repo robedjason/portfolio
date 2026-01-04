@@ -45,11 +45,11 @@ const ExperienceLevels = [
   },
   {
     key: "LOW",
-    description: "Working Knowledge"
+    description: "Medium"
   }
 ] satisfies readonly ExperienceLevel[]
 
-type ExperienceLevelKey = (typeof ExperienceLevels)[number]["key"]
+export type ExperienceLevelKey = (typeof ExperienceLevels)[number]["key"]
 
 export namespace ExperienceLevel {
   export const getByKey = (key: ExperienceLevelKey): ExperienceLevel => ExperienceLevels.find(it => it.key === key)!!;

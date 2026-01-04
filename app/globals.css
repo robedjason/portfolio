@@ -1,146 +1,110 @@
 @import "tailwindcss";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @font-face {
-    font-family: 'JetBrainsMono';
-    src: url('/static/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
-         url('/static/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-}  
+  font-family: 'JetBrainsMono';
+  src: url('/static/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('/static/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
 
 
 :root {
-  --background: #F4F7F3;
-  --card: #E3E8E3;
-  --border: #CBD6CC;
-  --text: #2B2F2B;
-  --subtext: #5F6B63;
-  --subtext-inverted: #e8e8e8;
-  --altbackground: #55695c;
+  --background: #f1faee;
+  --altbackground: #e3efe1;
+  --invbackground: #1d3557;
+  --border: #457b9d;
+  --text: #1d3557;
+  --subtext: #457b9d;
+  --invtext: #f1faee;
+  --invsubtext: #a8dadc;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1d3557;
+    --altbackground: #2a3f5f;
+    --invbackground: #f1faee;
+    --text: #f1faee;
+    --subtext: #a8dadc;
+    --invtext: #1d3557;
+    --invsubtext: #457b9d;
+  }
+} */
+
+html.dark {
+  --background: #1d3557;
+  --altbackground: #2a3f5f;
+  --invbackground: #f1faee;
+  --text: #f1faee;
+  --subtext: #a8dadc;
+  --invtext: #1d3557;
+  --invsubtext: #457b9d;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-altbackground: var(--altbackground);
+  --color-invbackground: var(--invbackground);
   --color-foreground: var(--text);
+  --color-subtext: var(--subtext);
+  --color-invtext: var(--invtext);
+  --color-invsubtext: var(--invsubtext);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #F6F7F4;
-    --text: #ededed;
-  }
-}
-
 body {
-  text-align: center;
   background: var(--background);
   color: var(--text);
   font-family: JetBrainsMono;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
 }
 
-.page {
-  height: 100vh;
-  overflow-y: scroll;
-}
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
 
-h1 {
-  font-size: 50px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.subtext {
-  color: var(--subtext);
-}
-
-.inverted.subtext {
-
-  color: var(--subtext-inverted);
-}
-
-p.subtext {
-  font-size: 12px;
-}
-
-h3 {
-  font-size: 25px;
-}
-
-.intro {
-  background: var(--altbackground);
-  color: white;
-}
-
-.intro-card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-}
-
-.intro-card-text {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-}
-
-.intro-card-profile-image {
-  border-radius: 100;
-  height: 100%;
-  overflow: hidden;
-  max-height: 150px;
-  max-width: 150px;
-}
-
-@media only screen and (max-width: 600px) {
-  .intro-card-profile-image {
-    display: none;
+    to {
+      opacity: 1;
+    }
   }
-}
 
-.nav-header {
-  display: flex;
-  justify-content: space-evenly;
-  position: sticky;
-  margin-bottom: 10px;
-}
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-.content {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.about-part {
-  margin-top: 8px;
-  text-align: justify;
-}
-
-
-
-.link-footer {
-  position: fixed;
-  left: 5;
-  bottom: 0;
-  width: min-content;
-}
-
-@media only screen and (max-width: 900px) {
-  .link-footer {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
-    background: var(--card);
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
 
-.techs-category {
-  margin-bottom: 28px;
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
 }

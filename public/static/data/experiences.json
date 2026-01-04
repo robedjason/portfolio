@@ -1,27 +1,110 @@
 [
   {
-    "id": 1,
-    "startMonth": 8,
-    "startYear": 2020,
-    "endMonth": 7,
-    "endYear": 2021,
+    "id": 6,
+    "startMonth": 9,
+    "startYear": 2023,
     "function": {
-      "key": "Peercoach",
-      "EN": "Peercoach"
+      "key": "Lead.Software.Engineer",
+      "EN": "Lead Software Engineer"
     },
-    "company": "Hogeschool Rotterdam",
+    "company": "Cofano Software Solutions",
     "location": {
-      "key": "Location.Rotterdam",
-      "EN": "Rotterdam, South Holland, Netherlands",
-      "NL": "Rotterdam, Zuid-Holland, Nederland"
+      "key": "Location.Dordrecht",
+      "EN": "Dordrecht, South Holland, Netherlands",
+      "NL": "Dordrecht, Zuid-Holland, Nederland"
     },
     "description": {
-      "key": "Peercoach.Description",
-      "EN": "Guided first year students to learn software development."
+      "key": "Cofano.Lead.Description",
+      "EN": "Leading software engineering efforts, providing technical direction and contributing to architecture and implementation decisions."
     },
     "skillKeys": [
-      "CSHARP",
-      "PYTHON"
+      "LEADERSHIP",
+      "ARCHITECTURE",
+      "KOTLIN",
+      "REACT-JS",
+      "POSTGRESQL",
+      "DOCKER",
+      "KUBERNETES"
+    ]
+  },
+  {
+    "id": 5,
+    "startMonth": 7,
+    "startYear": 2023,
+    "endMonth": 9,
+    "endYear": 2023,
+    "function": {
+      "key": "Software.Engineer",
+      "EN": "Software Engineer"
+    },
+    "company": "Cofano Software Solutions",
+    "location": {
+      "key": "Location.Dordrecht",
+      "EN": "Dordrecht, South Holland, Netherlands",
+      "NL": "Dordrecht, Zuid-Holland, Nederland"
+    },
+    "description": {
+      "key": "Cofano.Engineer.Description",
+      "EN": "Worked as a software engineer focusing on building and improving production-ready systems."
+    },
+    "skillKeys": [
+      "JAVA",
+      "REACT-JS",
+      "ARCHITECTURE"
+    ]
+  },
+  {
+    "id": 4,
+    "startMonth": 2,
+    "startYear": 2023,
+    "endMonth": 6,
+    "endYear": 2023,
+    "function": {
+      "key": "Software.Engineer.Intern",
+      "EN": "Software Engineering Intern"
+    },
+    "company": "NOS (Nederlandse Omroep Stichting)",
+    "location": {
+      "key": "Location.Hilversum",
+      "EN": "Hilversum, North Holland, Netherlands",
+      "NL": "Hilversum, Noord-Holland, Nederland"
+    },
+    "description": {
+      "key": "NOS.Intern.Description",
+      "EN": "Internship within the BackOffice IT department, contributing to internal systems and tooling."
+    },
+    "skillKeys": [
+      "PYTHON",
+      "DJANGO"
+    ]
+  },
+  {
+    "id": 3,
+    "startMonth": 12,
+    "startYear": 2021,
+    "endMonth": 2,
+    "endYear": 2023,
+    "function": {
+      "key": "Cofano.PartTime",
+      "EN": "Part-time Software Developer"
+    },
+    "company": "Cofano Software Solutions",
+    "location": {
+      "key": "Location.Dordrecht",
+      "EN": "Dordrecht, South Holland>, Netherlands",
+      "NL": "Dordrecht, Zuid-Holland, Nederland"
+    },
+    "description": {
+      "key": "Cofano.PartTime.Description",
+      "EN": "Developed and maintained software solutions as part of a professional engineering team."
+    },
+    "skillKeys": [
+      "JAVA",
+      "MYSQL",
+      "POSTGRESQL",
+      "REACT-JS",
+      "DOCKER",
+      "KOTLIN"
     ]
   },
   {
@@ -54,111 +137,28 @@
     ]
   },
   {
-    "id": 3,
-    "startMonth": 12,
-    "startYear": 2021,
-    "endMonth": 2,
-    "endYear": 2023,
+    "id": 1,
+    "startMonth": 8,
+    "startYear": 2020,
+    "endMonth": 7,
+    "endYear": 2021,
     "function": {
-      "key": "Cofano.PartTime",
-      "EN": "Part-time Software Developer"
+      "key": "Peercoach",
+      "EN": "Peercoach"
     },
-    "company": "Cofano Software Solutions",
+    "company": "Hogeschool Rotterdam",
     "location": {
-      "key": "Location.Dordrecht",
-      "EN": "Dordrecht, South Holland, Netherlands",
-      "NL": "Dordrecht, Zuid-Holland, Nederland"
+      "key": "Location.Rotterdam",
+      "EN": "Rotterdam, South Holland, Netherlands",
+      "NL": "Rotterdam, Zuid-Holland, Nederland"
     },
     "description": {
-      "key": "Cofano.PartTime.Description",
-      "EN": "Developed and maintained software solutions as part of a professional engineering team."
+      "key": "Peercoach.Description",
+      "EN": "Guided first year students to learn software development."
     },
     "skillKeys": [
-      "JAVA",
-      "MYSQL",
-      "POSTGRESQL",
-      "REACT-JS",
-      "DOCKER",
-      "KOTLIN"
-    ]
-  },
-  {
-    "id": 4,
-    "startMonth": 2,
-    "startYear": 2023,
-    "endMonth": 6,
-    "endYear": 2023,
-    "function": {
-      "key": "Software.Engineer.Intern",
-      "EN": "Software Engineering Intern"
-    },
-    "company": "NOS (Nederlandse Omroep Stichting)",
-    "location": {
-      "key": "Location.Hilversum",
-      "EN": "Hilversum, North Holland, Netherlands",
-      "NL": "Hilversum, Noord-Holland, Nederland"
-    },
-    "description": {
-      "key": "NOS.Intern.Description",
-      "EN": "Internship within the BackOffice IT department, contributing to internal systems and tooling."
-    },
-    "skillKeys": [
-      "PYTHON",
-      "DJANGO"
-    ]
-  },
-  {
-    "id": 5,
-    "startMonth": 7,
-    "startYear": 2023,
-    "endMonth": 9,
-    "endYear": 2023,
-    "function": {
-      "key": "Software.Engineer",
-      "EN": "Software Engineer"
-    },
-    "company": "Cofano Software Solutions",
-    "location": {
-      "key": "Location.Dordrecht",
-      "EN": "Dordrecht, South Holland, Netherlands",
-      "NL": "Dordrecht, Zuid-Holland, Nederland"
-    },
-    "description": {
-      "key": "Cofano.Engineer.Description",
-      "EN": "Worked as a software engineer focusing on building and improving production-ready systems."
-    },
-    "skillKeys": [
-      "JAVA",
-      "REACT-JS",
-      "ARCHITECTURE"
-    ]
-  },
-  {
-    "id": 6,
-    "startMonth": 9,
-    "startYear": 2023,
-    "function": {
-      "key": "Lead.Software.Engineer",
-      "EN": "Lead Software Engineer"
-    },
-    "company": "Cofano Software Solutions",
-    "location": {
-      "key": "Location.Dordrecht",
-      "EN": "Dordrecht, South Holland, Netherlands",
-      "NL": "Dordrecht, Zuid-Holland, Nederland"
-    },
-    "description": {
-      "key": "Cofano.Lead.Description",
-      "EN": "Leading software engineering efforts, providing technical direction and contributing to architecture and implementation decisions."
-    },
-    "skillKeys": [
-      "LEADERSHIP",
-      "ARCHITECTURE",
-      "KOTLIN",
-      "REACT-JS",
-      "POSTGRESQL",
-      "DOCKER",
-      "KUBERNETES"
+      "CSHARP",
+      "PYTHON"
     ]
   }
 ]

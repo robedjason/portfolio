@@ -48,12 +48,12 @@
         "categoryKey": "FE"
     },
     {
-        "key": "TYPESCRIPT",
-        "title": "TypeScript",
-        "iconName": "typescript.svg",
-        "yearsExperience": 3,
-        "experienceLevel": "MEDIUM",
-        "categoryKey": "FE"
+        "key": "SPRING",
+        "title": "Spring",
+        "iconName": "springboot.svg",
+        "yearsExperience": 5,
+        "experienceLevel": "HIGH",
+        "categoryKey": "BE"
     },
     {
         "key": "PYTHON",
@@ -64,12 +64,12 @@
         "categoryKey": "BE"
     },
     {
-        "key": "SPRING",
-        "title": "Spring",
-        "iconName": "springboot.svg",
-        "yearsExperience": 5,
-        "experienceLevel": "HIGH",
-        "categoryKey": "BE"
+        "key": "TYPESCRIPT",
+        "title": "TypeScript",
+        "iconName": "typescript.svg",
+        "yearsExperience": 3,
+        "experienceLevel": "MEDIUM",
+        "categoryKey": "FE"
     },
     {
         "key": "MYSQL",
