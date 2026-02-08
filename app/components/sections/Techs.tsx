@@ -7,7 +7,7 @@ export default function Techs({ techs }: { techs: TechArray }) {
 
   const techGroupings = Object.entries(Object.groupBy(techs, tech => tech.categoryKey)).map(([categoryKey, groupedTechs]) => ({
     category: TechCategory.getByKey(categoryKey),
-    groupedTechs: groupedTechs || []
+    groupedTechs: groupedTechs?.filter(it => it.yearsExperience > 2) || []
   }))
 
   return (<section className="py-8 px-4">
@@ -24,8 +24,7 @@ export default function Techs({ techs }: { techs: TechArray }) {
               </div>
             ))}
           </div>
-        )
-        )}
+        ))}
       </div>
     </div>
   </section>)

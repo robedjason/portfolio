@@ -22,6 +22,6 @@ export const getMonthString = (monthNumber: number, lang?: Language): string | n
 
     const locale = lang ? langLocaleMap[lang] : langLocaleMap.EN
 
-    return new Date(new Date().setMonth(monthNumber))
+    return new Date(new Date().setMonth(monthNumber-1))
         .toLocaleDateString(locale, { month: 'short' })
 }
