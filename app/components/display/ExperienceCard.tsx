@@ -15,6 +15,7 @@ export default function ExperienceCard({ experience, techs }: { experience: Expe
         <div className="">
             <h3 className="font-bold text-lg">{getMLSString(experience.function, "EN")}</h3>
             <p className="text-xs mb-2">{experience.company} · {getMLSString(experience.location, "EN")} · {displayMonth(experience)}</p>
+            <p className="pb-2 text-sm">{getMLSString(experience.description, "EN")}</p>
             <div className="flex flex-wrap gap-2">
                 {relevantTechs.map((tech) => <TechChip tech={tech} />)}
             </div>

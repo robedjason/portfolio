@@ -7,7 +7,9 @@ type Theme = "light" | "dark";
 
 export function applyTheme(theme: Theme) {
   const root = document.documentElement; // <html>
-  root.classList.toggle("dark", theme === "dark");
+  const isDark = theme === "dark"
+  root.classList.toggle("dark", isDark);
+  root.dataset.theme = isDark ? "dark" : "light"
 }
 
 export function getStoredTheme(): Theme | null {
